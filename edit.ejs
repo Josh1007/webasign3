@@ -1,0 +1,85 @@
+<%- include ../partials/header.ejs %>
+
+<%- include ../partials/main_nav.ejs %>
+
+<div class="container">
+    <div class="row">
+    <div class="col-md-offset-3 col md-6">
+        <h1><%= title %><h1>
+        <form class="form" method="post">
+
+
+            <div class="form-group">
+                <label for="Car ModelTextField"> Car Model </label>
+                <input type="text" class="form-control"
+                id="Car ModelTextField"
+                placeholder="Enter the Car Model"
+                name="Car_Model" 
+                value="<%= car.Car_Model %>"
+                required>
+             </div>
+
+            <div class="form-group">
+                <label for="OwnerTextField"> Owner </label>
+                <input type="text" class="form-control"
+                id="OwnerTextField"
+                placeholder="Enter the Car Owner"
+                name="Owner" 
+                value="<%= car.Owner %>"
+                required>
+             </div>
+
+            <div class="form-group">
+                <label for="YearTextField"> Year </label>
+                <input type="text" class="form-control"
+                id="YearTextField"
+                placeholder="Enter the Car Year"
+                name="Year" 
+                value="<%= car.Year %>"
+                required>
+             </div>
+
+            <div class="form-group">
+                <label for="DescriptionTextField"> Description </label>
+                <textarea type="text" class="form-control"
+                id="DescriptionTextField"
+                placeholder="Enter the Car Description"
+                name="Description" required>
+                <%= car.Description %>
+                </textarea>
+             </div>
+            <div class="form-group">
+                <label for="PriceTextField"> Price </label>
+                <input type="text" class="form-control"
+                id="PriceTextField"
+                placeholder="Enter the Car Price"
+                name="Price"
+                value="<%= car.Price %>" 
+                required>
+             </div>
+             <button class="btn-btn-primary" type="submit">
+                <i class="fas fa-edit"></i>Submit</button>
+
+            <a href="/Cars-list" class="btn btn-warning">
+                <i class="fas fa-undo"></i>Cancel</a>
+            </form>
+
+
+             
+        </div>
+    </div>
+</div>
+            
+
+
+
+
+
+
+
+
+
+
+
+<%- include ../partials/bottom_nav.ejs %>
+<%- include ../partials/footer.ejs %>

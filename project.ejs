@@ -1,0 +1,136 @@
+<%- include partials/header.ejs %>
+
+<%- include partials/main_nav.ejs %>
+
+<link rel="stylesheet" type="text/css" href="style.css">
+<main>
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4" style="color:white;"><i><b><%= title %></h1></i></b>
+  </div>
+</div>
+
+    <div class="section_1">
+      <div class="Projects">
+
+      </div> 
+      <p>Here are some projects I've worked on during my time in Ontario tech.</p>
+      <ul>
+        <li>The First code is an asembler code for Fahrenheit to Celsius Conversion</li>
+        <li>The Second code is python code for Caesar Encryption and Decryption </li>
+        
+      </ul>
+
+      </div>
+     
+     <div class="codesection">
+      <p>
+.data<br>
+msg: .asciiz "Fahrenheit to Celsius Conversion" # Header <br>
+Farenheittemp: .asciiz "\nEnter Fahrenheit : " <br>
+Celsiustemp: .asciiz "Celsius " <br>
+Int1: .float 32.0 <br>
+Int2: .float 1.8 <br>
+	# used the formula C=(F-32)/1.8 <br>
+.text<br>
+li $v0, 4<br>
+la $a0, msg <br>                
+syscall<br>
+
+li $v0, 4
+la $a0, Farenheittemp # Both this command and the one above are to output the message<br>
+syscall<br>
+
+li $v0, 6<br>
+syscall<br>
+
+l.s $f1, Int1	# integer<br> 
+l.s $f2, Int2   # integer <br><br>
+
+
+sub.s $f0, $f0, $f1  # (Input -32) = Answer <br>
+
+div.s $f0, $f0, $f2  # Answer / 1.8<br>
+<br>
+li $v0, 4<br>
+la $a0, Celsiustemp # prints the Fahrenheit to Celsius Conversion<br>
+syscall<br>
+
+li $v0, 2<br>
+mov.s $f12, $f0<br>
+syscall<br>
+<br>
+li $v0, 10<br>
+syscall<br>
+
+      </p>
+      </div>
+      <div class="codesection">
+  <p>
+    #!/usr/bin/env python<br>
+# coding: utf-8<br>
+# In[3]:<br>
+#Joshua Emmanuel 100755423<br>
+import string<br>
+alphabet = string.ascii_lowercase<br>
+Capital = string.ascii_uppercase<br>
+def Encryption(word, level):<br>
+file = []<br>
+for allwords in word:<br>
+if allwords in Capital:<br>
+index = (Capital.index(allwords)+ level)<br>
+NW = Capital[index]<br>
+file.append(NW)<br>
+elif allwords in alphabet:<br>
+index = (alphabet.index(allwords) + level)<br>
+NW = alphabet[index]<br>
+file.append(NW)<br>
+return file<br>
+def decrypt(word, level):<br>
+file = []<br>
+for allwords in word:<br>
+if allwords in Capital:<br>
+index = (Capital.index(allwords) - level)<br>
+NW = Capital[index]<br>
+file.append(NW)<br>
+elif allwords in alphabet:<br>
+index = (alphabet.index(allwords) - level)<br> 
+NW = alphabet[index]<br>
+file.append(NW)<br>
+return file<br>
+     
+print ("Caesar Encryption and Decryption")<br>
+print("1. Encryption")<br>
+print("2. Decryption")<br>
+print("3. Quit")<br>
+choice=int(input("Enter Choice:"))<br>
+if choice==1:<br>
+  print ("\nEnter Encryption")<br>
+  fiago = input()<br>
+  code = Encryption( fiago , 2)<br>  
+  print("Encryption of")<br>
+  print(fiago)<br>
+  print(code)<br>
+  
+  
+elif choice==2:
+  print ("\nDecryption")<br>
+  fiago = input()<br>
+  code = decrypt( fiago , 2) <br>
+  print("Decryption of")<br>
+  print(fiago)<br>
+  print(code)<br>
+  <br>
+     <br>
+elif choice==3:<br>
+  exit<br>
+else:<br>
+ print("Invalid choice. Enter 1-3")<br>
+# In[ ]:<br>
+# In[ ]:<br>
+  </p>
+      </div>
+
+</main>
+<%- include partials/bottom_nav.ejs %>
+<%- include partials/footer.ejs %>

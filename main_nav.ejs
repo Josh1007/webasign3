@@ -1,0 +1,63 @@
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">Josh</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+        <% if(title == "Home") {%>
+
+          <a class="nav-link active" href="/home">
+           
+        <% } else { %>
+          <a class="nav-link" href="/home"> 
+        <% } %>  
+          <i class="fa-sharp fa-solid fa-lg fa-house"></i> Home</a>
+        </li>
+
+
+        <li class="nav-item">  
+        <% if(title == "Project") {%>
+          <a class="nav-link active" href="/project"> 
+        <% } else { %>
+          <a class="nav-link" href="/project"> 
+        <% } %> 
+           <i class="fa-solid fa-briefcase"></i> Project</a>
+        </li>
+
+        <li class="nav-item">  
+        <% if(title == "About Me") {%>
+          <a class="nav-link active" href="/about"> 
+        <% } else { %>
+          <a class="nav-link" href="/about"> 
+        <% } %> 
+           <i class="fa-solid fa-address-card"></i> About Me</a>
+        </li>
+
+        <li class="nav-item">  
+        <% if(title == "Contact") {%>
+          <a class="nav-link active" href="/contact"> 
+        <% } else { %>
+          <a class="nav-link" href="/contact"> 
+        <% } %> 
+           <i class="fa-solid fa-address-book"></i> Contact</a>
+        </li>
+
+        <li class="nav-item">  
+        <% if(title == "Cars") {%>
+          <a class="nav-link active" href="/Cars-list"> 
+        <% } else { %>
+          <a class="nav-link" href="/Cars-list"> 
+        <% } %> 
+           <i class="fa-solid fa-car-rear"></i> Cars</a>
+        </li>
+        
+        
+
+        
+    </div>
+  </div>
+</nav>
